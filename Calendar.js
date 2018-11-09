@@ -151,14 +151,16 @@ export default class Calendar extends Component {
     this._maxDate = max;
   }
   _onChoose (day) {
+    let that = this;
+    console.log('selected =>', day)
     const {
       startDate
-    } = this.state;
-    this.setState({
+    } = that.state;
+    that.setState({
       startDate: day,
-      startDateText: this._i18n(day, 'date')
+      startDateText: that._i18n(day, 'date')
     }, () => {
-      this.confirm()
+      that.confirm()
     });
   }
   cancel () {
@@ -194,9 +196,7 @@ export default class Calendar extends Component {
     let endMoment = endDate ? endDate.clone() : null;
     this.props.onConfirm && this.props.onConfirm({
       startDate: startMoment ? startMoment.toDate() : null,
-      endDate: this._i18n(startMoment, 'date'),
-      startMoment,
-      endMoment
+      endDate: this._i18n(startMoment, 'date')
     });
     this.close();
   }

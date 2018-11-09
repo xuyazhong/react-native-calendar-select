@@ -47,7 +47,7 @@ export default class Calendar extends Component {
         'save': '保 存',
         'clear': '清除'
       },
-      'date': 'M月D日'
+      'date': 'YYYY-MM-DD'
     },
     'en': {
       'w': ['', 'Mon', 'Tues', 'Wed', 'Thur', 'Fri', 'Sat', 'Sun'],
@@ -152,7 +152,6 @@ export default class Calendar extends Component {
   }
   _onChoose (day) {
     let that = this;
-    console.log('selected =>', day)
     const {
       startDate
     } = that.state;
@@ -188,14 +187,15 @@ export default class Calendar extends Component {
   }
   confirm () {
     const {
-      startDate,
-      endDate
+      startDate
     } = this.state;
     let startMoment = startDate ? startDate.clone() : null;
-    let endMoment = startDate ? startDate.clone() : null;
+    let formatDate = startDate ? startDate.clone() : null;
+    let start = Moment(formatDate, 'YYYY-MM-DD');
+    let result = this._i18n(start, 'date');
     this.props.onConfirm && this.props.onConfirm({
-      startDate: startMoment ? startMoment.toDate() : null,
-      endDate: this._i18n(endMoment, 'date')
+        startDate: startMoment ? startMoment.toDate() : null,
+        result
     });
     this.close();
   }

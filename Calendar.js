@@ -32,7 +32,7 @@ export default class Calendar extends Component {
   }
   static defaultProps = {
     format: 'YYYY-MM-DD',
-    i18n: 'en',
+    i18n: 'zh',
     customI18n: {},
     color: {}
   }
@@ -152,25 +152,14 @@ export default class Calendar extends Component {
   }
   _onChoose (day) {
     const {
-      startDate,
-      endDate
+      startDate
     } = this.state;
-    if ((!startDate && !endDate) || day < startDate || (startDate && endDate)) {
-      this.setState({
-        startDate: day,
-        endDate: null,
-        startDateText: this._i18n(day, 'date'),
-        startWeekdayText: this._i18n(day.isoWeekday(), 'weekday'),
-        endDateText: '',
-        endWeekdayText: '',
-      });
-    } else if (startDate && !endDate && day > startDate) {
-      this.setState({
-        endDate: day,
-        endDateText: this._i18n(day, 'date'),
-        endWeekdayText: this._i18n(day.isoWeekday(), 'weekday')
-      });
-    }
+    this.setState({
+      startDate: day,
+      startDateText: this._i18n(day, 'date')
+    }, () => {
+      this.confirm()
+    });
   }
   cancel () {
     this.close();
@@ -205,7 +194,7 @@ export default class Calendar extends Component {
     let endMoment = endDate ? endDate.clone() : null;
     this.props.onConfirm && this.props.onConfirm({
       startDate: startMoment ? startMoment.toDate() : null,
-      endDate: endMoment ? endMoment.toDate() : null,
+      endDate: this._i18n(startMoment, 'date'),
       startMoment,
       endMoment
     });

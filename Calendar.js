@@ -157,8 +157,7 @@ export default class Calendar extends Component {
       startDate
     } = that.state;
     that.setState({
-      startDate: day,
-      startDateText: that._i18n(day, 'date')
+      startDate: day
     }, () => {
       that.confirm()
     });
@@ -193,10 +192,10 @@ export default class Calendar extends Component {
       endDate
     } = this.state;
     let startMoment = startDate ? startDate.clone() : null;
-    let endMoment = endDate ? endDate.clone() : null;
+    let endMoment = startDate ? startDate.clone() : null;
     this.props.onConfirm && this.props.onConfirm({
       startDate: startMoment ? startMoment.toDate() : null,
-      endDate: this._i18n(startMoment, 'date')
+      endDate: this._i18n(endMoment, 'date')
     });
     this.close();
   }

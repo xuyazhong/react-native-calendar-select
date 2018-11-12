@@ -42,17 +42,7 @@ export default class Month extends Component {
       today,
       i18n
     } = this.props;
-    let y = month.year();
-    let m = month.month();
-    let year = today.year();
-    if (year === y) {
-      return Month.I18N_MAP[i18n][m];
-    } else {
-      if (i18n === 'en') {
-        return `${Month.I18N_MAP[i18n][m]}, ${y}`;
-      }
-      return month.format('YYYY年M月');
-    }
+    return month.format('YYYY年M月');
   }
   _getDayList (date) {
     let dayList;

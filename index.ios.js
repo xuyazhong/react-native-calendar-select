@@ -17,8 +17,7 @@ export default class calendar extends Component {
     super(props);
     this.calendar = null;
     this.state = {
-      startDate: new Date(2017, 7, 12),
-      endDate: new Date(2017, 8, 23)
+      selectedDay: new Date(2018, 12, 26)
     };
     this.openCalendar = this.openCalendar.bind(this);
     this.confirmDate = this.confirmDate.bind(this);
@@ -30,13 +29,46 @@ export default class calendar extends Component {
   confirmDate ({startDate, endDate, startMoment, endMoment}) {
     console.log(startDate, endDate, startMoment, endMoment);
     this.setState({
-      startDate,
-      endDate
+      selectedDay: startDate
     });
   }
   openCalendar() {
     !!this.calendar && this.calendar.open();
   }
+
+  //当前时间 yyyymmdd
+  getFormatDate() {
+    var date = new Date('2018-01-22');
+    var year = date.getFullYear();
+    var month = date.getMonth() + 1;
+    var strDate = date.getDate();
+    if (month >= 1 && month <= 9) {
+      month = '0' + month;
+    }
+    if (strDate >= 0 && strDate <= 9) {
+      strDate = '0' + strDate;
+    }
+    var currentdate = "" + year + month + strDate;
+    return currentdate;
+  }
+
+  //过去三个月
+  getPastMonth() {
+    var date = new Date('2018-01-22');
+    date.setMonth(date.getMonth() - 3);
+    var year = date.getFullYear();
+    var month = date.getMonth() + 1;
+    var strDate = date.getDate();
+    if (month >= 1 && month <= 9) {
+      month = '0' + month;
+    }
+    if (strDate >= 0 && strDate <= 9) {
+      strDate = '0' + strDate;
+    }
+    var currentdate = "" + year + month + strDate;
+    return currentdate;
+  }
+
   render() {
     // It's an optional property, I use this to show the structure of customI18n object.
     let customI18n = {
@@ -55,12 +87,6 @@ export default class calendar extends Component {
     let color = {
       mainColor: '#138691'
     };
-    const {
-      startDate,
-      endDate
-    } = this.state;
-    let text = startDate && endDate ? startDate.toLocaleDateString() + '  /  ' + endDate.toLocaleDateString() :
-      'Please select a period';
     return (
       <View style={styles.container}>
         <TouchableHighlight
@@ -71,17 +97,16 @@ export default class calendar extends Component {
           <Text style={styles.btnFont}>Choose Dates</Text>
         </TouchableHighlight>
         <View>
-          <Text style={styles.font}>{text}</Text>
+          <Text style={styles.font}>{this.state.selectedDay.toLocaleDateString()}</Text>
         </View>
         <Calendar
-          i18n="en"
+          i18n="zh"
           color={color}
           ref={(calendar) => {this.calendar = calendar;}}
           format="YYYYMMDD"
-          minDate="20170510"
-          maxDate="20180412"
-          startDate={this.state.startDate}
-          endDate={this.state.endDate}
+          minDate={this.getPastMonth()}
+          maxDate={this.getFormatDate()}
+          // selectDate={this.getFormatDate()}
           onConfirm={this.confirmDate}
           />
       </View>

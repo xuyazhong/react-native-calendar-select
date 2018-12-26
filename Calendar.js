@@ -28,6 +28,7 @@ export default class Calendar extends Component {
     customI18n: PropTypes.object,
     color: PropTypes.object,
     minDate: PropTypes.oneOfType([PropTypes.string, PropTypes.instanceOf(Date)]),
+    selectDate: PropTypes.oneOfType([PropTypes.string, PropTypes.instanceOf(Date)]),
     maxDate: PropTypes.oneOfType([PropTypes.string, PropTypes.instanceOf(Date)])
   }
   static defaultProps = {
@@ -94,6 +95,19 @@ export default class Calendar extends Component {
   }
   componentDidMount () {
     this._resetCalendar();
+    this._selectDate();
+  }
+  _selectDate() {
+    const {
+      selectDate,
+      format
+    } = this.props;
+    if (selectDate) {
+      let start = Moment(selectDate, format);
+      this.setState({
+        startDate: start
+      })
+    }
   }
   _i18n (data, type) {
     const {

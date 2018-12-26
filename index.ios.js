@@ -106,7 +106,7 @@ export default class calendar extends Component {
           format="YYYYMMDD"
           minDate={this.getPastMonth()}
           maxDate={this.getFormatDate()}
-          // selectDate={this.getFormatDate()}
+          selectDate={this.getFormatDate()}
           onConfirm={this.confirmDate}
           />
       </View>

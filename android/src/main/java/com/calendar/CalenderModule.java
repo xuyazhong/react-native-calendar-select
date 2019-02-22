@@ -95,7 +95,7 @@ public class CalenderModule extends ReactContextBaseJavaModule {
         }
         calendar.setTime(date);
 
-        int Resid = 3;
+        int Resid = 0;
 
         Activity currentActivity = getCurrentActivity();
 

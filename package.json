@@ -12,9 +12,6 @@
 		"react-native-calendar-xg",
 		"calendar"
 	],
-	"dependencies": {
-		"moment": "^2.18.1"
-	},
 	"peerDependencies": {
 		"prop-types": "^15.6.0",
 		"react": "^15.4.2",

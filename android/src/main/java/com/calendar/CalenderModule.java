@@ -97,7 +97,9 @@ public class CalenderModule extends ReactContextBaseJavaModule {
 
         int Resid = 3;
 
-        DatePickerDialog dpd = new DatePickerDialog(this.reactContext, Resid, new DatePickerDialog.OnDateSetListener() {
+        Activity currentActivity = getCurrentActivity();
+
+        DatePickerDialog dpd = new DatePickerDialog(currentActivity, Resid, new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
                 // 此处得到选择的时间，可以进行你想要的操作

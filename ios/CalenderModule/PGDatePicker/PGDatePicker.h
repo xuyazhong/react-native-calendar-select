@@ -8,7 +8,7 @@
 #import <UIKit/UIKit.h>
 #import "NSDate+PGCategory.h"
 #import "UIColor+PGHex.h"
-#import <PGPickerView/PGPickerView.h>
+#import "PGPickerView.h"
 #import "PGEnumeration.h"
 
 #define PGDatePickerDeprecated(instead) __attribute__((deprecated(instead)))

@@ -56,7 +56,7 @@ RCT_EXPORT_METHOD(selectFeatureDatePicker:(NSString *)currentDate :(RCTResponseS
         NSLog(@"dateComponents = %@", dateComponents);
         callback(@[@"2020-01-02"]);
     };
-    [[self getRootVC] presentViewController:datePickManager animated:false completion:nil]];
+    [[self getRootVC] presentViewController:datePickManager animated:false completion:nil];
     
     //    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
     //    dateFormatter.dateFormat = @"yyyy-MM-dd";

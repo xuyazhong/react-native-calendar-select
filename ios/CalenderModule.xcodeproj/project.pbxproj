@@ -7,8 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		87338538221FE6A400CF7272 /* CalenderModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 87338537221FE6A400CF7272 /* CalenderModule.m */; };
-		87338539221FE6A400CF7272 /* CalenderModule.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 87338536221FE6A400CF7272 /* CalenderModule.h */; };
+		87338545221FF34100CF7272 /* CalenderModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 87338543221FF34100CF7272 /* CalenderModule.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -18,16 +17,15 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
-				87338539221FE6A400CF7272 /* CalenderModule.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		87338533221FE6A400CF7272 /* libDatePicker.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libDatePicker.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		87338536221FE6A400CF7272 /* CalenderModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CalenderModule.h; sourceTree = "<group>"; };
-		87338537221FE6A400CF7272 /* CalenderModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CalenderModule.m; sourceTree = "<group>"; };
+		87338533221FE6A400CF7272 /* libCalenderModule.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libCalenderModule.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		87338543221FF34100CF7272 /* CalenderModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalenderModule.m; sourceTree = "<group>"; };
+		87338544221FF34100CF7272 /* CalenderModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalenderModule.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,7 +42,7 @@
 		8733852A221FE6A400CF7272 = {
 			isa = PBXGroup;
 			children = (
-				87338535221FE6A400CF7272 /* DatePicker */,
+				87338542221FF34100CF7272 /* CalenderModule */,
 				87338534221FE6A400CF7272 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -52,26 +50,26 @@
 		87338534221FE6A400CF7272 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				87338533221FE6A400CF7272 /* libDatePicker.a */,
+				87338533221FE6A400CF7272 /* libCalenderModule.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		87338535221FE6A400CF7272 /* DatePicker */ = {
+		87338542221FF34100CF7272 /* CalenderModule */ = {
 			isa = PBXGroup;
 			children = (
-				87338536221FE6A400CF7272 /* CalenderModule.h */,
-				87338537221FE6A400CF7272 /* CalenderModule.m */,
+				87338543221FF34100CF7272 /* CalenderModule.m */,
+				87338544221FF34100CF7272 /* CalenderModule.h */,
 			);
-			path = DatePicker;
+			path = CalenderModule;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		87338532221FE6A400CF7272 /* DatePicker */ = {
+		87338532221FE6A400CF7272 /* CalenderModule */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8733853C221FE6A400CF7272 /* Build configuration list for PBXNativeTarget "DatePicker" */;
+			buildConfigurationList = 8733853C221FE6A400CF7272 /* Build configuration list for PBXNativeTarget "CalenderModule" */;
 			buildPhases = (
 				8733852F221FE6A400CF7272 /* Sources */,
 				87338530221FE6A400CF7272 /* Frameworks */,
@@ -81,9 +79,9 @@
 			);
 			dependencies = (
 			);
-			name = DatePicker;
+			name = CalenderModule;
 			productName = DatePicker;
-			productReference = 87338533221FE6A400CF7272 /* libDatePicker.a */;
+			productReference = 87338533221FE6A400CF7272 /* libCalenderModule.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -101,7 +99,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 8733852E221FE6A400CF7272 /* Build configuration list for PBXProject "DatePicker" */;
+			buildConfigurationList = 8733852E221FE6A400CF7272 /* Build configuration list for PBXProject "CalenderModule" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -113,7 +111,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				87338532221FE6A400CF7272 /* DatePicker */,
+				87338532221FE6A400CF7272 /* CalenderModule */,
 			);
 		};
 /* End PBXProject section */
@@ -123,7 +121,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				87338538221FE6A400CF7272 /* CalenderModule.m in Sources */,
+				87338545221FF34100CF7272 /* CalenderModule.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,7 +259,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		8733852E221FE6A400CF7272 /* Build configuration list for PBXProject "DatePicker" */ = {
+		8733852E221FE6A400CF7272 /* Build configuration list for PBXProject "CalenderModule" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8733853A221FE6A400CF7272 /* Debug */,
@@ -270,7 +268,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8733853C221FE6A400CF7272 /* Build configuration list for PBXNativeTarget "DatePicker" */ = {
+		8733853C221FE6A400CF7272 /* Build configuration list for PBXNativeTarget "CalenderModule" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8733853D221FE6A400CF7272 /* Debug */,

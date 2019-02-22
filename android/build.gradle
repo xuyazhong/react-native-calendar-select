@@ -14,7 +14,7 @@ android {
     buildToolsVersion "28.0.3"
 
     defaultConfig {
-        minSdkVersion 19
+        minSdkVersion 17
     }
     lintOptions {
         abortOnError false
@@ -31,5 +31,5 @@ repositories {
 }
 
 dependencies {
-    compile 'com.facebook.react:react-native:[0.30.0,)'
+    compile 'com.facebook.react:react-native:+'
 }

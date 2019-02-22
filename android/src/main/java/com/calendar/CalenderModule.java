@@ -105,7 +105,7 @@ public class CalenderModule extends ReactContextBaseJavaModule {
                 // 此处得到选择的时间，可以进行你想要的操作
                 Log.e("您选择了：", + year + "年" + monthOfYear + "月" + dayOfMonth + "日");
                 String selectDate = year + "-" + monthOfYear + "-" + dayOfMonth;
-                callback.invoke(null, selectDate);
+                callback.invoke(selectDate);
             }
         }, calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH));
         if (hasLimit) {

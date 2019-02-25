@@ -10,10 +10,10 @@
 
 @interface NSDate (CalenderModule)
 
-- (NSDate *)last3month;
++ (NSDate *)last3month;
 
-- (NSDate *)feture6month;
++ (NSDate *)feture6month;
 
-- (NSDate *)currentDate;
++ (NSDate *)currentDate;
 
 @end

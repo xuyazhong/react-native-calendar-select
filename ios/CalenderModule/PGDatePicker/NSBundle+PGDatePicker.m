@@ -29,14 +29,33 @@
 }
 
 + (NSString *)pg_localizedStringForKey:(NSString *)key value:(NSString *)value {
-    NSString *language = [NSLocale preferredLanguages].firstObject;
-    language = @"zh-Hans";
-    return [self pg_localizedStringForKey:key value:value language:language];
+    return [self pg_localizedStringForKey:key value:value language:@"zh-Hans"];
 }
 
 + (NSString *)pg_localizedStringForKey:(NSString *)key value:(NSString *)value language:(NSString *)language {
-    NSBundle *bundle = [NSBundle bundleWithPath:[[NSBundle safeBundle] pathForResource:language ofType:@"lproj"]];
-    value = [bundle localizedStringForKey:key value:value table:nil];
-    return [[NSBundle mainBundle] localizedStringForKey:key value:value table:nil];
+    return [self localized:key];
+}
+
++ (NSString *)localized:(NSString *)key {
+    NSDictionary *dict = @{
+                           @"yearString" : @"年",
+                           @"monthString" : @"月",
+                           @"dayString" : @"日",
+                           @"hourString" : @"时",
+                           @"minuteString" : @"分",
+                           @"secondString" : @"秒",
+                           @"mondayString" : @"周一",
+                           @"tuesdayString" : @"周二",
+                           @"wednesdayString" : @"周三",
+                           @"thursdayString" : @"周四",
+                           @"fridayString" : @"周五",
+                           @"saturdayString" : @"周六",
+                           @"sundayString" : @"周日",
+                           @"cancelButtonText" : @"取消",
+                           @"confirmButtonText" : @"确定"
+                           };
+    NSString *result = [dict objectForKey:key];
+    return result ? result : key;
 }
 @end
+

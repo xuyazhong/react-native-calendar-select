@@ -12,4 +12,7 @@
 
 @interface CalenderModule : NSObject<RCTBridgeModule>
 
+@property (nonatomic, copy) NSString *min;
+@property (nonatomic, copy) NSString *max;
+
 @end

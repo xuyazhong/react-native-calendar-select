@@ -54,11 +54,12 @@ RCT_EXPORT_METHOD(selectFeatureDatePicker:(NSString *)currentDate :(RCTResponseS
     //    datePicker.isCycleScroll = true;
     datePicker.datePickerMode = PGDatePickerModeDate;
     
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
+
     if (hasLimit) {
-        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
-        dateFormatter.dateFormat = @"yyyy-MM-dd";
-        datePicker.minimumDate = [dateFormatter dateFromString:self.min];
-        datePicker.maximumDate = [dateFormatter dateFromString:self.max];
+        
+        datePicker.minimumDate = self.min;
+        datePicker.maximumDate = self.max;
     }
     NSDate *date = [dateFormatter dateFromString:currentDate];
     [datePicker setDate:date animated:true];

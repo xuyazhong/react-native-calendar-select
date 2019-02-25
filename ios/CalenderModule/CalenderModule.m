@@ -66,7 +66,7 @@ RCT_EXPORT_METHOD(selectFeatureDatePicker:(NSString *)currentDate :(RCTResponseS
     
     datePicker.selectedDate = ^(NSDateComponents *dateComponents) {
         NSLog(@"dateComponents = %@", dateComponents);
-        NSString *newDate = [NSString stringWithFormat:@"%@-%@-%@", dateComponents.year, dateComponents.month, dateComponents.day];
+        NSString *newDate = [NSString stringWithFormat:@"%ld-%ld-%ld", dateComponents.year, dateComponents.month, dateComponents.day];
         callback(@[newDate]);
     };
     [[self getRootVC] presentViewController:datePickManager animated:false completion:nil];

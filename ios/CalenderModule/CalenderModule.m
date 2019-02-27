@@ -66,11 +66,21 @@ RCT_EXPORT_METHOD(selectFeatureDatePicker:(NSString *)currentDate :(RCTResponseS
     
     datePicker.selectedDate = ^(NSDateComponents *dateComponents) {
         NSLog(@"dateComponents = %@", dateComponents);
-        NSString *newDate = [NSString stringWithFormat:@"%ld-%ld-%ld", dateComponents.year, dateComponents.month, dateComponents.day];
+        NSString *newDate = [NSString stringWithFormat:@"%ld-%@-%@", dateComponents.year, [self convertNumber:dateComponents.month], [self convertNumber:dateComponents.day]];
         callback(@[newDate]);
     };
     [[self getRootVC] presentViewController:datePickManager animated:false completion:nil];
     
+}
+
+- (NSString *)convertNumber:(NSInteger num) {
+    NSString *result;
+    if (num < 10) {
+        result = [NSString stringWithFormat:@"0%ld", num];
+    } else {
+        result = [NSString stringWithFormat:@"%ld", num];
+    }
+    return result;
 }
 
 @end

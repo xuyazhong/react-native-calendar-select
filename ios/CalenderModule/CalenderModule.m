@@ -73,7 +73,7 @@ RCT_EXPORT_METHOD(selectFeatureDatePicker:(NSString *)currentDate :(RCTResponseS
     
 }
 
-- (NSString *)convertNumber:(NSInteger num) {
+- (NSString *)convertNumber:(NSInteger)num {
     NSString *result;
     if (num < 10) {
         result = [NSString stringWithFormat:@"0%ld", num];
